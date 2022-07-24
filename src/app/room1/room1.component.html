@@ -1,0 +1,37 @@
+<p>room1 works!</p>
+<div>
+  <label for="search">Search Roomies:</label>
+  <input type="text" id="search" placeholder="Roomies..." [(ngModel)] = "userInput">
+  <button (click)="Searchroomies()">Search Roomies</button>
+  <button (click)="Addroomies()">Add Roomies</button>
+  <!-- <button [routerLink] = "['/addroomies']">Add Roomies</button> -->
+
+  <!-- <app-add-roomie></app-add-roomie> -->
+</div>
+
+<div>
+  <table>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Date Of Entry</th>
+        <th>Room Rent</th>
+      </tr> 
+    <tbody>
+      <tr *ngFor="let room of roomies">
+        <td>
+          {{ room.firstName }}
+        </td>
+        <td>
+          {{ room.lastName }}
+        </td>
+        <td>
+          {{ room.dateOfEntry }}
+        </td>
+		<td>
+			{{ room.roomRent | currency }}
+		  </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
