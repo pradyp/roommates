@@ -1,5 +1,5 @@
 
-<form [formGroup] = "addNewRoomie" (ngSubmit)="onSubmit()">
+<form [formGroup] = "addNewRoomie" (ngSubmit)="onSubmit(addNewRoomie.value)">
   <div>
 	<label for="first-name">First Name: </label>
   <input id="first-name" type="text" formControlName="firstName">
@@ -19,6 +19,7 @@
   <label for="rent">Room rent: </label>
   <input id="rent" type="text" formControlName="roomRent">
 </div>
+<button>Submit Roomy</button>
 </form>
 
-<button type="submit">Submit</button>
+

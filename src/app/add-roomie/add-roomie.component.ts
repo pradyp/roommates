@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ROOMIES } from '../roomies.mock';
+import { Roomies} from '../roomies.model';
 
 @Component({
   selector: 'app-add-roomie',
@@ -8,7 +9,7 @@ import { ROOMIES } from '../roomies.mock';
   styleUrls: ['./add-roomie.component.css']
 })
 export class AddRoomieComponent implements OnInit {
-  roomies = ROOMIES;
+  roomies= ROOMIES;
   addNewRoomie =new FormGroup({
     firstName: new FormControl(''),
     lastName: new FormControl(''),
@@ -21,8 +22,9 @@ export class AddRoomieComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(){
-    // this.roomies.push(this.addNewRoomie);
+  onSubmit(val:any){
+    console.log(val);
+    this.roomies.push(val);
 
   }
 
